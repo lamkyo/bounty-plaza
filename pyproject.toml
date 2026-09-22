@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reverse-bounty-guard"
+version = "0.1.0"
+description = "Fail-closed screening for bounty offers with negative or unsafe obligations"
+requires-python = ">=3.10"
+
+[project.scripts]
+reverse-bounty-guard = "reverse_bounty_guard.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["reverse_bounty_guard*"]
