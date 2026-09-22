@@ -1,0 +1,11 @@
+{
+  "meta_bounty": "BOUNTY-PLAZA-645",
+  "domain_bounties": [
+    {"id": "DAXDA-CL164", "domain": "cl164", "value_usd": 7500},
+    {"id": "DAXDA-CONTAINMENT", "domain": "containment", "value_usd": 7500},
+    {"id": "DAXDA-DA13", "domain": "da13", "value_usd": 7500},
+    {"id": "DAXDA-CHRONO", "domain": "chrono", "value_usd": 7500},
+    {"id": "DAXDA-MMPIBENCH", "domain": "mmpibench", "value_usd": 7000}
+  ],
+  "total_value_usd": 37000
+}
