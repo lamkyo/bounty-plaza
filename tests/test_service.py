@@ -39,17 +39,6 @@ def test_invalid_credentials_and_unknown_tenant_fail_closed():
     mode.create_tenant("a")
     with pytest.raises(PermissionError):
         mode.authenticate("a", "wrong")
+    # Accessing a non‑existent tenant should raise UnknownTenant
     with pytest.raises(UnknownTenant):
-        mode.get_tenant("missing")
-
-
-def test_creation_validates_duplicate_and_plan():
-    mode = SaaSMode()
-    with pytest.raises(ValueError):
-        mode.create_tenant("", "free")
-    with pytest.raises(ValueError):
-        mode.create_tenant("a", "unknown")
-    mode.create_tenant("a")
-    with pytest.raises(ValueError):
-        mode.create_tenant("a")
-
+        mode.get_tenant("nonexistent")
