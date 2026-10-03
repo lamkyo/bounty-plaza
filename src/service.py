@@ -7,7 +7,7 @@ educational purposes of this kata.
 
 from __future__ import annotations
 
-from typing import Dict
+from typing import Dict, Any, List
 
 # Import the custom exception used by the tests.
 # The exception is defined in ``exceptions.py``.
@@ -78,7 +78,7 @@ class SaaSMode:
     # ---------------------------------------------------------------------
     # Tenant lookup
     # ---------------------------------------------------------------------
-    def get_tenant(self, tenant_id: str) -> dict:
+    def get_tenant(self, tenant_id: str) -> Dict[str, Any]:
         """Return tenant data for *tenant_id*.
 
         Raises
@@ -90,5 +90,13 @@ class SaaSMode:
             return self._tenants[tenant_id]
         except KeyError as exc:
             raise UnknownTenant(f"Tenant '{tenant_id}' not found") from exc
+
+    # ---------------------------------------------------------------------
+    # Utility
+    # ---------------------------------------------------------------------
+    def list_tenants(self) -> List[str]:
+        """Return a list of all tenant identifiers currently stored.
+        """
+        return list(self._tenants.keys())
 
 # End of module
