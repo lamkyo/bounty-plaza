@@ -62,6 +62,7 @@ MIGRATIONS = [
     CREATE INDEX IF NOT EXISTS idx_redeem_status ON redeem_requests(status);
     CREATE INDEX IF NOT EXISTS idx_tx_status ON transactions(status);
     CREATE INDEX IF NOT EXISTS idx_tx_created ON transactions(created_at);""",
+    "ALTER TABLE inference_calls ADD COLUMN fee_lamports INTEGER;",
 ]
 
 
